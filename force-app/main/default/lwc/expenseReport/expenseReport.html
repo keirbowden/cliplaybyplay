@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-card slds-p-around_medium">
+        <lightning-input label="Expense Report Name" onchange={handleNameChange}></lightning-input>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input label="Start Date" type="date" onchange={handleStartDateChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-p-left_large">
+                <lightning-input label="End Date" type="date" onchange={handleEndDateChange}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <hr></hr>
+
+        <lightning-layout horizontal-align="spread">
+            <lightning-layout-item class="slds-text-heading_small">
+                Index
+            </lightning-layout-item>        
+            <lightning-layout-item class="slds-text-heading_small">
+                Date
+            </lightning-layout-item>        
+            <lightning-layout-item class="slds-text-heading_small">
+                Description
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-text-heading_small">
+                Amount
+            </lightning-layout-item>
+        </lightning-layout>
+        <template for:each={items} for:item='item'>
+            <c-expense-item key={item.index} index={item.index} date={item.SFDXPBP__Date__c} description={item.SFDXPBP__Description__c}
+                            amount={item.SFDXPBP__Amount__c} 
+                            ondatechanged={handleItemDateChanged}
+                            ondescriptionchanged={handleItemDescriptionChanged}
+                            onamountchanged={handleItemAmountChanged}>
+            </c-expense-item>
+        </template>
+        <div>
+            <lightning-button label="Add Item" title="Add Item Action" onclick={handleAddItem}></lightning-button>        
+        </div>
+        <lightning-button class="slds-align_absolute-center" label="Save" title="Save action" onclick={handleSave}></lightning-button>        
+    </div>
+</template>

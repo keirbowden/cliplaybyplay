@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout horizontal-align="spread">
+        <lightning-layout-item class="slds-p-top_medium">
+            {index}
+        </lightning-layout-item>        
+        <lightning-layout-item>
+            <lightning-input type="date" value={date} onchange={handleDateChange}></lightning-input>
+        </lightning-layout-item>        
+        <lightning-layout-item>
+            <lightning-textarea value={descriptiom} onchange={handleDescriptionChange}></lightning-textarea>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-input type="number" value={amount} onchange={handleAmountChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

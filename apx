@@ -1,0 +1,3 @@
+SFDXPBP__Expense_Report__c report=[select id, Name from SFDXPBP__Expense_Report__c where id='a018E00000B8ncwQAB'];
+report.Name+=' Apex';
+update report;

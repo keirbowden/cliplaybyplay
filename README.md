@@ -1,9 +1,7 @@
-# SFDX App
+# Salesforce CLI Play by Play example app
 
-## Dev, Build and Test
+## Managed Package
 
-## Resources
+The example code relies on a managed package. Install this via:
 
-## Description of Files and Directories
-
-## Issues
+`sfdx force:package:install -p 04t4J000000ddjm -k clipbp`

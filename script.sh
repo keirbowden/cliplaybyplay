@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Salesforce CLI Play by Play
+#
+# Script to spin up a scratch org, install a package, deploy code, assign permission
+# set and execute tests.
+#
+# You will need to be logged into your dev hub to use this script
 
 echo "Creating scratch org"
 sfdx force:org:create -s -d 30 -a scriptpbp -f ./config/project-scratch-def.json -w 10
